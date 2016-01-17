@@ -1,0 +1,84 @@
+﻿ <html>
+<head>
+    <title>Angular JS - StudentApp</title>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-route/angular-route.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="/bower_components/angular-messages/angular-messages.js"></script>
+    <script src="/bower_components/angular-re-captcha/angular-re-captcha.js"></script>
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="bower_components/adal-angular/dist/adal.min.js"></script>
+    <script src="bower_components/adal-angular/dist/adal-angular.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>   
+    <script src="app/js/app.js"></script>
+    <script src="app/js/providers.js"></script>
+    <script src="app/js/Homecontroller.js"></script>
+    <script src="app/js/MenuController.js"></script>
+    <script src="app/js/AddDataController.js"></script>
+    <script src="app/js/ViewListController.js"></script>
+    <script src="app/js/factory.js"></script>
+    <script src="app/js/directives.js"></script>
+    <link href="app/css/Style.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="/" />
+</head>
+<body ng-app="mainApp" ng-controller="homeController">
+    <div class="page-header">
+        <h2>AngularJS Sample Application</h2>
+        <p>
+            Using AngularJS and Bootstrap framework, we can design resposive and reliable application very fast.
+        </p>
+    </div>
+
+    <div class="nav nav-inverse">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid" ng-controller="menuUpdate">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <svg height="50" width="220">
+                        <defs>
+                            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:rgb(0, 148, 255);stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:rgb(178, 0, 255);stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <ellipse cx="110" cy="25" rx="110" ry="20" style="fill:url(#gradient)"  />
+                        <text fill="#ffffff" font-size="15" font-family="Verdana" x="34" y="30">Student Information</text>
+                        Sorry, your browser does not support inline SVG.
+                    </svg>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li class="{ active: isActive('/Home') }"><a href="/home">Home</a></li>
+                        <li><a href="viewStudents" class="{ active: isActive('/viewStudents') }">View Students <span class="badge">{{RecordCount}}</span></a></li>
+                        <li>
+                            <a href="addStudent" class="{ active: isActive('/addStudent') }">Add Student </a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right" ng-hide=" userInfo.isAuthenticated" >
+                        <li><a class="btn btn-link" ng-click="login()">Login</a></li>
+                    </ul>
+                    <div style="align-content:flex-start">
+                        <ul class="nav navbar-nav navbar-right" ng-show="userInfo.isAuthenticated">
+                            <span uib-dropdown on-toggle="toggled(open)">
+                                <a class="btn-link" id="simple-dropdown" uib-dropdown-toggle>{{userInfo.userName}}</a>
+                                <ul uib-dropdown-menu aria-labelledby="simple-dropdown" ng-show="userInfo.isAuthenticated">
+                                    <li><a class="btn-link" ng-click="logout()">Logout</a></li>
+                                    <li><a class="btn-link" href="#userInfo">User Info</a></li>
+                                </ul>
+                            </span>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div ng-view></div>
+    </div>
+</body>
+</html>
