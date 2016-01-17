@@ -1,0 +1,63 @@
+
+<div class="container">
+    <form class="form-horizontal" name="myForm" ng-submit="register()">
+        <div class="alert alert-success fade">
+            <strong>Success!</strong> Indicates a successful or positive action.
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">First Name:</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" ng-model="FirstName" name="FirstName" placeholder="Enter First Name" required>                
+                <div ng-messages="myForm.FirstName.$error" role="alert" class="error-messages"  ng-show="myForm.FirstName.$dirty">
+                    <div ng-message="required">
+                        Please enter First Name.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Last Name:</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" ng-model="LastName" placeholder="Enter Last Name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Password:</label>
+            <div class="col-sm-5">
+                <input name="myPassword" type="password" class="form-control" ng-model="Password" placeholder="Enter Password" required validate-password-characters/>
+                <div ng-messages="myForm.myPassword.$error"  role="alert" class="error-messages" ng-show="myForm.myPassword.$dirty">
+                    <div ng-message="required">
+                        You did not enter a password
+                    </div>
+                    <div ng-message="passwordCharacters">
+                        Your password must contain a numeric, uppercase and lowercase as well as special characters
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Age:</label>
+            <div class="col-sm-5">
+                <div class="dropdown">
+                    <select ng-model="Age" class="form-control" >
+                        <option ng-repeat="item in AgeRange" ng-selected="item.selected" pla>{{item}}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <!--<div class="form-group">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-5" re-captcha ng-model="user.captcha"></div>
+        </div>-->
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <p>
+                    <a href="#" ng-click="AddStudent()" ng-disabled="myForm.$invalid" class="btn btn-default">
+                        <span class="glyphicon glyphicon-user"></span> Add
+                    </a>
+                </p>
+            </div>
+        </div>
+    </form>
+</div>

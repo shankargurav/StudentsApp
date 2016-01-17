@@ -1,0 +1,14 @@
+
+<div class="divTable panel panel-default">
+    <div id="title" class="Title"> Students Information</div>
+    <div class="divRow">
+        <div class="divCell"><span>FirstName</span></div>
+        <div class="divCell"><span>LastName</span></div>
+        <div class="divCell"><span>Age</span></div>
+    </div>
+    <div class="divRow" ng-repeat="student in students">
+        <div class="divCell"><span>{{ student.FirstName | uppercase }}</span></div>
+        <div class="divCell"><span>{{ student.LastName }}</span></div>
+        <div class="divCell"><span>{{ student.Age }}</span></div>
+    </div>
+</div>
