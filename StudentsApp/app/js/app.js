@@ -1,7 +1,6 @@
 ﻿
 'use strict';
-angular.module("mainApp", ['ngRoute', 'AdalAngular', 'ngAnimate', 'ui.bootstrap', 'ngMessages', 'reCAPTCHA'])
-    .value('clientId', 'a12345654321x')
+angular.module("mainApp", ['ngRoute', 'AdalAngular', 'angular-loading-bar', 'ngAnimate', 'ui.bootstrap', 'ngMessages', 'reCAPTCHA', ])
     .config(['$routeProvider', '$httpProvider', '$locationProvider', 'adalAuthenticationServiceProvider', 'reCAPTCHAProvider', '$provide', '$logProvider', 'appConfigProvider',
         function ($routeProvider, $httpProvider, $locationProvider, adalProvider, reCAPTCHAProvider, $provide, $logProvider, appConfigProvider) {
             $logProvider.debugEnabled(appConfigProvider.debug);

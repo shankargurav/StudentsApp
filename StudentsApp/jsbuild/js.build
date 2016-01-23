@@ -1,0 +1,13 @@
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ConcatDir>debug-js\concat</ConcatDir>
+    <MinDir>debug-js\min</MinDir>
+  </PropertyGroup>
+  <Target Name="HelloDiscworld">
+    <Message Text="Hello Discworld !!! from $(ConcatDir)" Importance="high"></Message>
+  </Target>
+  <Target Name="AfterBuild">
+    <CallTarget Targets="HelloDiscworld">      
+    </CallTarget>
+  </Target>
+</Project>
