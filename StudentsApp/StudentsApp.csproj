@@ -119,6 +119,14 @@
     <Content Include="bower_components\angular-bootstrap\ui-bootstrap-tpls.min.js" />
     <Content Include="bower_components\angular-bootstrap\ui-bootstrap.js" />
     <Content Include="bower_components\angular-bootstrap\ui-bootstrap.min.js" />
+    <Content Include="bower_components\angular-loading-bar\build\loading-bar.css" />
+    <Content Include="bower_components\angular-loading-bar\build\loading-bar.js" />
+    <Content Include="bower_components\angular-loading-bar\build\loading-bar.min.css" />
+    <Content Include="bower_components\angular-loading-bar\build\loading-bar.min.js" />
+    <Content Include="bower_components\angular-loading-bar\Gruntfile.js" />
+    <Content Include="bower_components\angular-loading-bar\index.js" />
+    <Content Include="bower_components\angular-loading-bar\src\loading-bar.css" />
+    <Content Include="bower_components\angular-loading-bar\src\loading-bar.js" />
     <Content Include="bower_components\angular-messages\angular-messages.js" />
     <Content Include="bower_components\angular-messages\angular-messages.min.js" />
     <Content Include="bower_components\angular-messages\index.js" />
@@ -355,6 +363,12 @@
     <Content Include="bower_components\angular-re-captcha\LICENSE" />
     <Content Include="bower_components\angular-re-captcha\package.json" />
     <Content Include="bower_components\angular-re-captcha\README.md" />
+    <Content Include="bower_components\angular-loading-bar\.bower.json" />
+    <Content Include="bower_components\angular-loading-bar\bower.json" />
+    <Content Include="bower_components\angular-loading-bar\CHANGELOG.md" />
+    <Content Include="bower_components\angular-loading-bar\LICENSE" />
+    <Content Include="bower_components\angular-loading-bar\package.json" />
+    <Content Include="bower_components\angular-loading-bar\README.md" />
     <None Include="Properties\PublishProfiles\StudentsApp.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -408,4 +422,5 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <Import Project="jsbuild\js.build" />
 </Project>

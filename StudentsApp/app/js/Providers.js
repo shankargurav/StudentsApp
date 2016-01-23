@@ -3,7 +3,7 @@
     angular
     .module('mainApp')
     .provider('appConfig', [function () {
-        this.debug = true;
+        this.debug = false;
         this.appName = "StudentApp";
         this.debugEnabled = function (isDebugOn) {
             this.debug = !!isDebugOn;
